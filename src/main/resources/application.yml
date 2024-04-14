@@ -1,6 +1,8 @@
 server:
   port: 9000
   
+
+  
 spring:
   application:
     name: api-gateway
@@ -8,7 +10,7 @@ spring:
     gateway:
       routes:
         - id: back-worker
-          uri: http://localhost:9001/ # lb://worker/worker
+          uri: ${BACK_WORKER_SERVICE_URL:http://localhost:9001/} # lb://worker/worker
           predicates:
           - Path=/worker/**
             
