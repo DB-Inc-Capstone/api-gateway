@@ -3,15 +3,15 @@ server:
   
 spring:
   application:
-    name: gateway
-  #cloud:
-  #  gateway:
-  #    routes:
-        #- id:
-        #  uri: lb://post/post
-        #  predicates:
-        #  - Path=/post/**
-
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: back-worker
+          uri: http://localhost:8081/ # lb://worker/worker
+          predicates:
+          - Path=/worker/**
+            
 eureka:
   instance:
     prefer-ip-address: true
@@ -19,4 +19,4 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://localhost:8761/eureka # 주소 설정
