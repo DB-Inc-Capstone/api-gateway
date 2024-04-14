@@ -8,7 +8,7 @@ spring:
     gateway:
       routes:
         - id: back-worker
-          uri: http://localhost:8081/ # lb://worker/worker
+          uri: http://localhost:9001/ # lb://worker/worker
           predicates:
           - Path=/worker/**
             
