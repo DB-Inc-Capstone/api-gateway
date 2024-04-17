@@ -10,7 +10,7 @@ spring:
     gateway:
       routes:
         - id: back-worker
-          uri: ${BACK_WORKER_SERVICE_URL:http://localhost:9001/} # lb://worker/worker
+          uri: lb://back-worker/worker
           predicates:
           - Path=/worker/**
             
