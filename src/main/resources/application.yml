@@ -15,8 +15,8 @@ spring:
           - Path=/worker/**
             
 eureka:
-  #instance:
-  #  prefer-ip-address: true
+  instance:
+    prefer-ip-address: true
   client:
     register-with-eureka: true
     fetch-registry: true
