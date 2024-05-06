@@ -1,8 +1,6 @@
 server:
   port: 9000
   
-
-  
 spring:
   application:
     name: back-apigateway
@@ -13,6 +11,18 @@ spring:
           uri: lb://back-worker/worker
           predicates:
           - Path=/worker/**
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials # 중복 제거
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*" # 테스트 용도
+            allowedMethods:
+            - GET
+            - POST
+            - PUT
+            - DELETE
+            - OPTIONS
             
 eureka:
   instance:
