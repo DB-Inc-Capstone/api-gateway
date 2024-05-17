@@ -11,6 +11,10 @@ spring:
           uri: lb://back-worker/worker
           predicates:
           - Path=/worker/**
+        - id: back-work
+          uri: lb://back-work/work
+          predicates:
+          - Path=/work/**
       default-filters:
         - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials # 중복 제거
       globalcors:
