@@ -8,17 +8,17 @@ spring:
     gateway:
       routes:
         - id: back-worker
-          uri: lb://back-worker/worker
+          uri: lb://BACK-WORKER # eureka instance
           predicates:
-          - Path=/worker/**
+          - Path=/worker/** # URL
         - id: back-work
-          uri: lb://back-work/work
+          uri: lb://BACK-WORK #eureka instance 
           predicates:
-          - Path=/work/**
+          - Path=/work/** # URL
         - id: back-dashboard
-          uri: lb://back-dashboard/dashboard
+          uri: lb://BACK-DASHBOARD # eureka instance
           predicates:
-          - Path=/dashboard/**
+          - Path=/dashboard/** # URL
       #default-filters:
       #  - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials # 중복 제거
       #globalcors:
