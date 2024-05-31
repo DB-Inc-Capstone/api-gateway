@@ -19,18 +19,18 @@ spring:
           uri: lb://BACK-DASHBOARD # eureka instance
           predicates:
           - Path=/dashboard/** # URL
-      #default-filters:
-      #  - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials # 중복 제거
-      #globalcors:
-      #  cors-configurations:
-      #    '[/**]':
-      #      allowedOrigins: "*" # 테스트 용도
-      #      allowedMethods:
-      #      - GET
-      #      - POST
-      #      - PUT
-      #      - DELETE
-      #      - OPTIONS
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials # 중복 제거
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*" # 테스트 용도
+            allowedMethods:
+            - GET
+            - POST
+            - PUT
+            - DELETE
+            - OPTIONS
             
 eureka:
   instance:
